@@ -1,9 +1,11 @@
+VERSION : 0.1
+
 
 PARAMETRE ADMISSIBLE PAR LA COMMANDE
 
--rt       (all) => Request-type : active | passive - Defaut : active 
--m        (all) => Mode : standalone | wrapper - Defaut : standalone
--h        (all) => adresse de l'hote distant
+-rt       (all) => Request-type : a (active) | p (passive) - Defaut : active 
+-m        (all) => Mode : s (standalone) | w (wrapper) - Defaut : standalone
+-h        (all) => IP of remote host
 -t   	  (all) => timeout - Defaut : 30 secondes
 -c     (active) => commande a executer
 -a     (active) => arguments de la commande
