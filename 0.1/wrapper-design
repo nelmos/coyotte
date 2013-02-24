@@ -1,0 +1,48 @@
+le wrapper permet de verifier si il n'éxiste pas une liste spécifique d'arguments pour le couple host/check
+
+Le couple host/check est il présent dans la table wrapper ?
+oui => récupération des arguments en corrélation
+non => Des arguments ont-il été passé en parametre ?
+       oui => récupération des arguments passé en parametre
+       non => Une liste d'arguments est t'elle disponible dans la table des checks par défaut ?
+              oui => récupération des arguments par défaut et construction de la requete
+              non => ERROR : no args
+
+
+###############
+## DATABASE ###
+###############
+
+table wrapper {
+	id    => id
+	host  => id_host
+        check => id_check
+        args  => liste des arguments séparé par le caractere ":"
+}
+
+table default {
+	id    => id
+        check => id_check
+	args  => liste des arguments par défaut de la commande
+}
+
+
+table host {
+	id => id
+	host => ip ou name
+}
+
+table check {
+	id => id
+	check => nom du check
+}
+
+Logique de l'interface
+	Déclarer un wrapper
+                host : proposer une liste des host déjà connu. Proposer d'en creer un si ce dernier n'éxiste pas
+		check : proposer une liste des checks déja connu. Proposer d'en creer un si ce dernier n'éxiste pas
+		args : ajouter les arguments de la commande. Ajouter un champ par arg
+	Déclarer un check par defaut
+		check : proposer une liste des checks déjà connu. Proposer d'en creer un si ce dernier n'éxiste pas
+		args : ajouter les arguments de la commande. Ajouter un champ par arg
+
